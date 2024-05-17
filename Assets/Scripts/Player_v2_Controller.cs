@@ -16,7 +16,7 @@ public class Player_v2_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //waterCounterText.text = waterCount.ToString();
+        waterCounterText.text = waterCount.ToString();
     }
 
     // Update is called once per frame
@@ -30,6 +30,10 @@ public class Player_v2_Controller : MonoBehaviour
     void OnTriggerStay2D(Collider2D other){
         if (other.tag == "Obstacle"){
             waterCount--;
+            waterCounterText.text = waterCount.ToString();
+        }
+        if (other.tag == "WaterDispenser"){
+            waterCount++;
             waterCounterText.text = waterCount.ToString();
         }
     }

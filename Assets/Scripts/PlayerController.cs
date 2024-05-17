@@ -34,5 +34,8 @@ public class PlayerController : MonoBehaviour
             waterCount--;
             waterCounterText.text = waterCount.ToString();
         }
+        if (other.tag == "WaterDispenser"){
+            waterCount++;
+        }
     }
 }
