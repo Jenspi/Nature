@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Wall
+=======
+  - Obstacle
+>>>>>>> 70061034d68cd4cc70bd4a9e9a05377db953f816
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,11 @@ TagManager:
   - 
   - Water
   - UI
+<<<<<<< HEAD
   - Wall
+=======
+  - Obstacle
+>>>>>>> 70061034d68cd4cc70bd4a9e9a05377db953f816
   - 
   - 
   - 
