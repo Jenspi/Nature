@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TSButtons : MonoBehaviour
 {
 	public void NewGame() {
-		SceneManager.LoadScene("TestScene");
+		SceneManager.LoadScene("LoreScene1");
 	}
 	
 	public void Credits() {
