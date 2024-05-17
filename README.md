@@ -10,6 +10,7 @@
 ### Jenny Spicer
 Hi, I'm Jenny
 ### Nhi
+It's me, Nhi!!!
 ### Duy
 ### Zach
 ### Daniel
