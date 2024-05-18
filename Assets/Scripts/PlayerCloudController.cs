@@ -1,16 +1,25 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCloudController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rb;
-    [SerializeField] private int _water;
     [SerializeField] private float _jumpForce;
+    [SerializeField] private WaterBar _waterBar;
+    [Header("Water Data")]
+    [SerializeField] private int _water; 
+    [SerializeField] private int _waterMin;
+    [SerializeField] private int _waterMax; 
+    [SerializeField] private int _waterGained;
+    [SerializeField] private int _waterCost;
+    [SerializeField] private int _waterDamage;
+    [Header("Hazard Effects")]
     [SerializeField] private Vector2 _windVector;
-    [SerializeField] private int _waterMin, _waterMax, _waterGained, _waterLost;
-    [SerializeField] private float _throwTime;
-    private bool _isJumping, _inWhirlwind;
+    [SerializeField] private float _throwTime; 
+    [SerializeField] private float _invulnTime;
+    [SerializeField] private int _flickerAmount;
+    private bool _isJumping, _inWhirlwind, _isDamaged, _hittingWall;
     private float _gravity;
 
     // Start is called before the first frame update
@@ -18,7 +27,10 @@ public class PlayerCloudController : MonoBehaviour
     {
         _isJumping = false;
         _inWhirlwind = false;
+        _hittingWall = false;
         _gravity = _rb.gravityScale;
+        _waterBar.setMaxWater(_waterMax);
+        _waterBar.SetWater(_waterMax);
     }
 
     void Update()
@@ -26,6 +38,8 @@ public class PlayerCloudController : MonoBehaviour
         if(Input.GetButtonDown("Jump") && _water > 0 && !_isJumping){
             _isJumping = true;
         }
+        if(_water <= 0)
+            SceneManager.LoadScene("GameOver"); // Game Over!
     }
 
     // Update is called once per frame
@@ -33,8 +47,9 @@ public class PlayerCloudController : MonoBehaviour
     {
         if(_isJumping && !_inWhirlwind){
             StartCoroutine("Jump");
-            _water -= _waterLost;
+            _water -= _waterCost;
             _isJumping = false;
+            _waterBar.SetWater(_water);
         }
         if(_inWhirlwind){
             _rb.AddForce(_windVector * Time.deltaTime, ForceMode2D.Impulse);
@@ -45,8 +60,23 @@ public class PlayerCloudController : MonoBehaviour
     }
 
     void LateUpdate(){
-        if(_water <= 0)
-            ; // Game Over!
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(!_isDamaged && collision.gameObject.name == "Mountain(Clone)" || collision.gameObject.name == "Mountain"){
+            _water -= _waterDamage;
+            _waterBar.SetWater(_water);
+            StartCoroutine("Damage");
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.name == "HorzWall"){
+            StartCoroutine("HitWall");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -77,5 +107,25 @@ public class PlayerCloudController : MonoBehaviour
     {
         yield return new WaitForSeconds(_throwTime);
         _inWhirlwind = false;
+    }
+
+    IEnumerator Damage()
+    {
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        _isDamaged = true;
+        for(int i = 0; i < _flickerAmount; i++){
+            sprite.enabled = false;
+            yield return new WaitForSeconds(_invulnTime);
+            sprite.enabled = true;
+            yield return new WaitForSeconds(_invulnTime);
+        }
+        _isDamaged = false;
+    }
+
+    IEnumerator HitWall()
+    {
+        _water -= _waterDamage;
+        _rb.AddForce(new Vector3(0, 140) * Time.deltaTime, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(2);
     }
 }

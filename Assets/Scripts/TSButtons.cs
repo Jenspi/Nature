@@ -30,4 +30,8 @@ public class TSButtons : MonoBehaviour
 		// Debug.Log("Game is exiting");
 		// Just to make sure its working
 	}
+
+	public void RestartLevel2() {
+		SceneManager.LoadScene("Zach_Scene_Condesation");
+	}
 }

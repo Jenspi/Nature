@@ -48,14 +48,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 8296337625223975004}
-  _water: 100
   _jumpForce: 7
-  _windVector: {x: 0, y: -40}
+  _water: 100
   _waterMin: 0
   _waterMax: 100
   _waterGained: 10
-  _waterLost: 5
+  _waterCost: 5
+  _waterDamage: 20
+  _windVector: {x: 0, y: -40}
   _throwTime: 0.2
+  _invulnTime: 0.1
+  _flickerAmount: 10
 --- !u!212 &3407609595206764078
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -164,7 +167,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
