@@ -818,8 +818,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1133446092}
   - component: {fileID: 1133446091}
+  - component: {fileID: 1133446093}
   m_Layer: 0
-  m_Name: AmbientWind1
+  m_Name: AmbientWind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -836,7 +837,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5d2472d6f1ab85746afed124a97611fb, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -936,6 +937,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133446093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133446090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d616fff0ba74e45834897fc619bcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 5d2472d6f1ab85746afed124a97611fb, type: 3}
+  - {fileID: 8300000, guid: 7deac7fb83fbc2846bbbad2c87e94a59, type: 3}
+  - {fileID: 8300000, guid: 19d788ee2d02d4942a7149ecde55cc7f, type: 3}
+  currentClip: {fileID: 0}
+  minWaitBetweenPlays: 1
+  maxWaitBetweenPlays: 5
+  waitTimeCountdown: -1
 --- !u!1 &1263546488
 GameObject:
   m_ObjectHideFlags: 0
