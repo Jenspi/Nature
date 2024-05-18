@@ -59,11 +59,16 @@ public class PlayerCloudController : MonoBehaviour
         }
     }
 
+    void DamagePlayer()
+    {
+        _water -= _waterDamage;
+        _waterBar.SetWater(_water);
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(!_isDamaged && collision.gameObject.name == "Mountain(Clone)" || collision.gameObject.name == "Mountain"){
-            _water -= _waterDamage;
-            _waterBar.SetWater(_water);
+            DamagePlayer();
             StartCoroutine("Damage");
         }
     }
@@ -72,6 +77,7 @@ public class PlayerCloudController : MonoBehaviour
     {
         if(collision.gameObject.name == "HorzWall"){
             StartCoroutine("HitWall");
+            DamagePlayer();;
         }
     }
 
@@ -80,6 +86,7 @@ public class PlayerCloudController : MonoBehaviour
         if(collider.gameObject.name == "Water(Clone)" || collider.gameObject.name == "Water"){
             Destroy(collider.gameObject);
             _water += _waterGained;
+            _waterBar.SetWater(_water);
         }
     }
 
