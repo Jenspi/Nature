@@ -48,8 +48,8 @@ public class PlayerCloudController : MonoBehaviour
         if(_isJumping && !_inWhirlwind){
             StartCoroutine("Jump");
             _water -= _waterCost;
-            _isJumping = false;
             _waterBar.SetWater(_water);
+            _isJumping = false;
         }
         if(_inWhirlwind){
             _rb.AddForce(_windVector * Time.deltaTime, ForceMode2D.Impulse);
@@ -71,14 +71,15 @@ public class PlayerCloudController : MonoBehaviour
             DamagePlayer();
             StartCoroutine("Damage");
         }
+        if(collision.gameObject.name == "HorzWall"){
+            DamagePlayer();
+            StartCoroutine("HitWall");
+        }
     }
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "HorzWall"){
-            StartCoroutine("HitWall");
-            DamagePlayer();;
-        }
+
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -127,7 +128,6 @@ public class PlayerCloudController : MonoBehaviour
 
     IEnumerator HitWall()
     {
-        _water -= _waterDamage;
         _rb.AddForce(new Vector3(0, 140) * Time.deltaTime, ForceMode2D.Impulse);
         yield return new WaitForSeconds(2);
     }
