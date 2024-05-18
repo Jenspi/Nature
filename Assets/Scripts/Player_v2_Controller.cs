@@ -23,6 +23,9 @@ public class Player_v2_Controller : MonoBehaviour
     void Update()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
+        if (moveInput > 0){
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
         Vector3 playerPos = new Vector3(moveInput, 0, 0) * _moveSpeed * Time.deltaTime;
         transform.position += playerPos;
     }

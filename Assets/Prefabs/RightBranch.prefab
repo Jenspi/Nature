@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8537977464538008994}
   - component: {fileID: 7456490286537927208}
   - component: {fileID: 6106520264038773477}
+  - component: {fileID: 910961784555296559}
   m_Layer: 6
   m_Name: RightBranch
   m_TagString: Obstacle
@@ -131,9 +132,9 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.044036746}
+  m_Offset: {x: 0.23792657, y: -0.04}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -144,7 +145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.56802166}
+  m_Size: {x: 1.1241467, y: 0.2}
   m_EdgeRadius: 0
 --- !u!50 &6106520264038773477
 Rigidbody2D:
@@ -173,3 +174,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!249 &910961784555296559
+AreaEffector2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481703939940727499}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
+  m_ForceMagnitude: 65
+  m_ForceVariation: 0
+  m_ForceTarget: 1
+  m_Drag: 4
+  m_AngularDrag: 0
