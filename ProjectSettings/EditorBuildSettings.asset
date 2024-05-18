@@ -6,24 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Zach_Scene_Condesation.unity
-    guid: 1925b99ba650f1d4f918961e68db8c74
-  - enabled: 0
     path: Assets/Scenes/TitleScene.unity
     guid: c9d42dda84f91f44e9ea33013c8319d1
+  - enabled: 1
+    path: Assets/Scenes/DanielScene 1.unity
+    guid: 61e941808149fc54f83957e560861d9b
+  - enabled: 1
+    path: Assets/Scenes/Zach_Scene_Condesation.unity
+    guid: 1925b99ba650f1d4f918961e68db8c74
+  - enabled: 1
+    path: Assets/Scenes/GameOver_Level2.unity
+    guid: 5d04c75b7dee326409e8b0c7cc32ef9f
   - enabled: 0
     path: Assets/Scenes/CreditsScene.unity
     guid: a9586614052d4eb47adce91f2fb01441
   - enabled: 0
-    path: Assets/Scenes/Zach's Scene.unity
-    guid: 1c5303935565ed642904d714d3a4cfbd
-  - enabled: 0
-    path: Assets/Scenes/DanielScene 1.unity
-    guid: 61e941808149fc54f83957e560861d9b
-  - enabled: 0
     path: Assets/Scenes/LoreScene1.unity
     guid: 5e6c6a871f34d2949a4ec259257be935
-  - enabled: 1
-    path: Assets/Scenes/GameOver_Level2.unity
-    guid: 5d04c75b7dee326409e8b0c7cc32ef9f
   m_configObjects: {}
