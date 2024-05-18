@@ -15,6 +15,8 @@ public class Dialogue : MonoBehaviour
 	
 	private int index;
 	private string nextScene;
+	private string speaker;
+	private string dialog;
 	
     // Start is called before the first frame update
     void Start()
@@ -44,16 +46,16 @@ public class Dialogue : MonoBehaviour
     void Update()
     {
         if(Input.GetMouseButtonDown(0)) {
-			if (textComponentTop.text == lines[index]) {
+			if (textComponentTop.text == dialog) {
 				NextLine();
-			} else if (textComponentBot.text == lines[index]) {
+			} else if (textComponentBot.text == dialog) {
 				NextLine();
 			} else {
 				StopAllCoroutines();
-				if (index % 2 == 0) {
-				textComponentTop.text = lines[index];
+				if (speaker == "1") {
+				textComponentTop.text = dialog;
 				} else {
-				textComponentBot.text = lines[index];
+				textComponentBot.text = dialog;
 				}
 			}
 		}
@@ -65,8 +67,11 @@ public class Dialogue : MonoBehaviour
 	}
 	
 	IEnumerator TypeLine() {
-		foreach (char c in lines[index].ToCharArray()) {
-			if (index % 2 == 0) {
+		string[] tokens = lines[index].Split("  ");
+		speaker = tokens[0];
+		dialog = tokens[1];
+		foreach (char c in dialog.ToCharArray()) {
+			if (speaker == "1") {
 				textComponentTop.text += c;
 			} else {
 				textComponentBot.text += c;			
