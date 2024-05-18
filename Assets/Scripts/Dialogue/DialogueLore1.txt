@@ -1,8 +1,8 @@
-2  Wheeeeee!!!!
-2  What a ride! Wait, where is everyone? Oh no, I've been separated from my body of water!
-1  Hello, water drop! I can't move you back to your body of water.
-1  But if you let me evaporate you, then you will turn into water vapor and rise up into the sky. 
-1  If you don't get caught in any hazards along the way... 
-1  Then you might be able to condense and precipitate home.
-1  Don't forget to grab as many of your buddies as possible along the way.
-1  (Use 'a' and 'd' to move left/right and dodge all the hazards)
+2  2  Wheeeeee!!!!
+2  2  What a ride! Wait, where is everyone? Oh no, I've been separated from my body of water!
+3  1  Hello, water drop! I can't move you back to your body of water.
+3  1  But if you let me evaporate you, then you will turn into water vapor and rise up into the sky. 
+3  1  If you don't get caught in any hazards along the way... 
+3  1  Then you might be able to condense and precipitate home.
+3  1  Don't forget to grab as many of your buddies as possible along the way.
+1  1  (Use 'a' and 'd' to move left/right and dodge all the hazards)

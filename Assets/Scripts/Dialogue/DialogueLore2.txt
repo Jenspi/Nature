@@ -1,4 +1,6 @@
-1  2Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-2  2Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-2  2Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-2  2Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+3  1  You made it! And with such style!
+3  1  Now you must condense so you and your friends can return to your home body of water.
+2  2  Will it hurt?
+3  1  No, silly water drop, but you must be careful. Your journey is not over yet.
+1  1  (Use the spacebar to jump. Try to dodge mountains and stay off the ground, but watch out for vortexes...
+1  1  It will cost you water essence to jump or collide. Don't forget to grab your buddies along the way.)

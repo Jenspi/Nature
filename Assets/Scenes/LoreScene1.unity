@@ -152,7 +152,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 605042810}
+  m_Father: {fileID: 486723425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 386031577}
   - component: {fileID: 386031576}
   m_Layer: 5
-  m_Name: RedHead
+  m_Name: BotImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,12 +281,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386031574}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 486723425}
+  m_Father: {fileID: 605042810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae50762688741704c84c9a22e238afcf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c73baca97740550488db47082ab440ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -426,8 +426,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 605042810}
-  - {fileID: 853456370}
-  - {fileID: 386031575}
+  - {fileID: 1447745348}
+  - {fileID: 9763531}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -466,13 +466,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1447745348}
-  - {fileID: 9763531}
+  - {fileID: 853456370}
+  - {fileID: 386031575}
   m_Father: {fileID: 486723425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -3}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605042811
@@ -529,6 +529,13 @@ MonoBehaviour:
   textComponentBot: {fileID: 9763532}
   lines: []
   textSpeed: 0.05
+  topSpeaker: {fileID: 853456371}
+  botSpeaker: {fileID: 386031576}
+  childrens: []
+  speaker1: {fileID: 21300000, guid: 648142a6f5fc77e4eb1aa1e07e116193, type: 3}
+  speaker2: {fileID: 21300000, guid: ae50762688741704c84c9a22e238afcf, type: 3}
+  speaker3: {fileID: 21300000, guid: f6a00d6c3bce00c4bacaa6ae4e16cf9e, type: 3}
+  speaker4: {fileID: 21300000, guid: 8afeb5f9840f34f4ebeb4dc6b43d6475, type: 3}
 --- !u!1 &656542930
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +640,7 @@ GameObject:
   - component: {fileID: 853456372}
   - component: {fileID: 853456371}
   m_Layer: 5
-  m_Name: OrangeHead
+  m_Name: TopImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,12 +653,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853456369}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 486723425}
+  m_Father: {fileID: 605042810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -678,7 +685,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6a00d6c3bce00c4bacaa6ae4e16cf9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c73baca97740550488db47082ab440ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -794,7 +801,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 605042810}
+  m_Father: {fileID: 486723425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

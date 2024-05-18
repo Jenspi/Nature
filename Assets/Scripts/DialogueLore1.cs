@@ -12,18 +12,35 @@ public class Dialogue : MonoBehaviour
 	public TextMeshProUGUI textComponentBot;
 	public string[] lines;
 	public float textSpeed;
+	public Image topSpeaker;
+	public Image botSpeaker;
+	public Image[] childrens;
+	
+	// 1 Narrator
+	public Sprite speaker1;
+	// 2 WaterDrop
+	public Sprite speaker2;
+	// 3 Sun
+	public Sprite speaker3;
+	// 4 Lake
+	public Sprite speaker4;
 	
 	private int index;
-	private string nextScene;
+	private string nextScene =  "TitleScene";
 	private string speaker;
+	private string place;
 	private string dialog;
 	
     // Start is called before the first frame update
     void Start()
     {
-        string lorePath = GlobalVariables.Get<string>("lorePath");
+        childrens = GetComponentsInChildren<Image>();
+		topSpeaker = childrens[1];
+		botSpeaker = childrens[2];
+		
+		string lorePath = GlobalVariables.Get<string>("lorePath");
 		nextScene = GlobalVariables.Get<string>("nextScene");
-		Debug.Log(lorePath);
+		if (lorePath == null) {lorePath = "Assets/Scripts/Dialogue/DialogueLore1.txt";}
 		FileInfo theSourceFile = new FileInfo(lorePath);
         StreamReader reader = theSourceFile.OpenText();
 		List<string> linesList = new List<string>();
@@ -52,7 +69,7 @@ public class Dialogue : MonoBehaviour
 				NextLine();
 			} else {
 				StopAllCoroutines();
-				if (speaker == "1") {
+				if (place == "1") {
 				textComponentTop.text = dialog;
 				} else {
 				textComponentBot.text = dialog;
@@ -69,11 +86,33 @@ public class Dialogue : MonoBehaviour
 	IEnumerator TypeLine() {
 		string[] tokens = lines[index].Split("  ");
 		speaker = tokens[0];
-		dialog = tokens[1];
+		place = tokens[1];
+		dialog = tokens[2];
+		Sprite newHead;
+		switch (speaker) {
+			case "1":
+			newHead = speaker1;
+			break;
+			case "2":
+			newHead = speaker2;
+			break;
+			case "3":
+			newHead = speaker3;
+			break;
+			case "4":
+			newHead = speaker4;
+			break;
+			default:
+			newHead = speaker1;
+			break;
+		}
+		
 		foreach (char c in dialog.ToCharArray()) {
-			if (speaker == "1") {
+			if (place == "1") {
+				topSpeaker.sprite = newHead;
 				textComponentTop.text += c;
 			} else {
+				botSpeaker.sprite = newHead;
 				textComponentBot.text += c;			
 			}
 			yield return new WaitForSeconds(textSpeed);
