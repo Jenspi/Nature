@@ -39,7 +39,7 @@ public class PlayerCloudController : MonoBehaviour
             _isJumping = true;
         }
         if(_water <= 0)
-            SceneManager.LoadScene("GameOver"); // Game Over!
+            SceneManager.LoadScene("GameOver_Level2");
     }
 
     // Update is called once per frame
@@ -57,10 +57,6 @@ public class PlayerCloudController : MonoBehaviour
             _rb.gravityScale = _gravity;
             StartCoroutine("Throw");
         }
-    }
-
-    void LateUpdate(){
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)

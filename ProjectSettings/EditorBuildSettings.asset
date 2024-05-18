@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver_Level2.unity
     guid: 5d04c75b7dee326409e8b0c7cc32ef9f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
     guid: a9586614052d4eb47adce91f2fb01441
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/LoreScene1.unity
     guid: 5e6c6a871f34d2949a4ec259257be935
   m_configObjects: {}
