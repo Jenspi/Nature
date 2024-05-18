@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class TSButtons : MonoBehaviour
 {
+	public void Intro() {
+		GlobalVariables.Set("lorePath", "Assets/Scripts/Dialogue/DialogueIntro.txt");
+		GlobalVariables.Set("nextScene", "TitleScene");
+		SceneManager.LoadScene("ExpositionScene");
+	}
+	
 	public void NewGame() {
 		GlobalVariables.Set("lorePath", "Assets/Scripts/Dialogue/DialogueLore1.txt");
 		GlobalVariables.Set("nextScene", "DanielScene 1");

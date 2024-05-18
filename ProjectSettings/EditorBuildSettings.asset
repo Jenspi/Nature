@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoreScene1.unity
     guid: 5e6c6a871f34d2949a4ec259257be935
+  - enabled: 1
+    path: Assets/Scenes/ExpositionScene.unity
+    guid: 83e04bc0028de24469381e2d1fb9a8b2
   m_configObjects: {}
