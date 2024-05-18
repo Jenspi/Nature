@@ -47,5 +47,8 @@ public class CondensationSpawner : MonoBehaviour
         Vector3 randomSize = new Vector3(Random.Range(_xMin, _xMax), Random.Range(_yMin, _yMax), Random.Range(_zMin, _zMax));
         newObject.transform.localScale = randomSize;
         newObject.transform.position = this.transform.position;
+        if(newObject.name == "Whirlwind(Clone)" || newObject.name == "Whirlwind"){
+            newObject.transform.position = new Vector2(newObject.transform.position.x, newObject.transform.position.y + Random.Range(-1, 1));
+        }
     }
 }

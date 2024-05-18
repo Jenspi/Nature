@@ -7,13 +7,17 @@ public class PlayerCloudController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private int _water;
     [SerializeField] private float _jumpForce;
-    private bool _isJumping;
+    [SerializeField] private Vector2 _windVector;
+    [SerializeField] private int _waterMin, _waterMax, _waterGained, _waterLost;
+    [SerializeField] private float _throwTime;
+    private bool _isJumping, _inWhirlwind;
     private float _gravity;
 
     // Start is called before the first frame update
     void Start()
     {
         _isJumping = false;
+        _inWhirlwind = false;
         _gravity = _rb.gravityScale;
     }
 
@@ -27,31 +31,51 @@ public class PlayerCloudController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(_isJumping){
+        if(_isJumping && !_inWhirlwind){
             StartCoroutine("Jump");
-            _water -= 10;
+            _water -= _waterLost;
             _isJumping = false;
         }
+        if(_inWhirlwind){
+            _rb.AddForce(_windVector * Time.deltaTime, ForceMode2D.Impulse);
+            StopCoroutine("Jump");
+            _rb.gravityScale = _gravity;
+            StartCoroutine("Throw");
+        }
+    }
+
+    void LateUpdate(){
+        if(_water <= 0)
+            ; // Game Over!
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.name == "Water(Clone)" || collider.gameObject.name == "Water"){
             Destroy(collider.gameObject);
-            _water += 10;
+            _water += _waterGained;
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision){
-        if(GetComponent<Collider>().gameObject.name == "Mountain(Clone)" || collision.gameObject.name == "Mountain"){
-            _water -= 20;
+    void OnTriggerStay2D(Collider2D collider){
+        if(collider.gameObject.name == "Whirlwind(Clone)" || collider.gameObject.name == "Whirlwind"){
+            _inWhirlwind = true;
         }
     }
 
-    IEnumerator Jump(){
+    IEnumerator Jump()
+    {
         _rb.gravityScale = 0f;
         _rb.velocity = new Vector2(0, _jumpForce);
-        yield return new WaitForSeconds(0.5f);
         _rb.gravityScale = _gravity;
+        // yield return new WaitForSeconds(0.5f);
+        // _rb.gravityScale = _gravity;
+        yield return new WaitForEndOfFrame();
+    }
+
+    IEnumerator Throw()
+    {
+        yield return new WaitForSeconds(_throwTime);
+        _inWhirlwind = false;
     }
 }
