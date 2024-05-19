@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7857577757125210539}
   - component: {fileID: 1401840955189819393}
   m_Layer: 0
-  m_Name: Untitled_Artwork_2
+  m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   _rb: {fileID: 8296337625223975004}
   _jumpForce: 7
   _waterBar: {fileID: 0}
+  _sprite: {fileID: 1401840955189819393}
   _water: 100
   _waterMin: 0
   _waterMax: 100

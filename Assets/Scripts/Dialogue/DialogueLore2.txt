@@ -1,6 +1,6 @@
-3  1  You made it! And with such style!
+3  1  The Sun: You made it! And with such style!
 3  1  Now you must condense so you and your friends can return to your home body of water.
-2  2  Will it hurt?
+2  2  Plop: Will it hurt?
 3  1  No, silly water drop, but you must be careful. Your journey is not over yet.
 1  1  (Use the spacebar to jump. Try to dodge mountains and stay off the ground, but watch out for vortexes...
 1  1  It will cost you water essence to jump or collide. Don't forget to grab your buddies along the way.)

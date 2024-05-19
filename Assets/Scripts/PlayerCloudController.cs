@@ -7,6 +7,7 @@ public class PlayerCloudController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private float _jumpForce;
     [SerializeField] private WaterBar _waterBar;
+    [SerializeField] private SpriteRenderer _sprite;
     [Header("Water Data")]
     [SerializeField] private int _water; 
     [SerializeField] private int _waterMin;
@@ -124,12 +125,11 @@ public class PlayerCloudController : MonoBehaviour
 
     IEnumerator Damage()
     {
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         _isDamaged = true;
         for(int i = 0; i < _flickerAmount; i++){
-            sprite.enabled = false;
+            _sprite.enabled = false;
             yield return new WaitForSeconds(_invulnTime);
-            sprite.enabled = true;
+            _sprite.enabled = true;
             yield return new WaitForSeconds(_invulnTime);
         }
         _isDamaged = false;
