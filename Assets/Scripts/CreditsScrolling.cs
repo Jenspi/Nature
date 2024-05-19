@@ -35,7 +35,7 @@ public class CreditsScrolling : MonoBehaviour
 		
 		var textPos = textComponent.GetComponent<RectTransform>();
         var textcoords = textPos.localPosition;
-		if (textcoords.y < 0 && index == 5) {
+		if (textcoords.y < 0 && index == 3) {
 			textPos.localPosition = new Vector3(textcoords.x, textcoords.y+1, textcoords.z);
 			index = 0;
 		} else {
