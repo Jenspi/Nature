@@ -8,8 +8,6 @@ using UnityEngine.SceneManagement;
 public class Player_v2_Controller : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
-    
-
     [SerializeField] private WaterBar _waterBar;
     [Header("Water Data")]
     [SerializeField] private int _water; 
@@ -45,7 +43,7 @@ public class Player_v2_Controller : MonoBehaviour
         transform.position += playerPos;
 
         if(_water <= 0)
-            SceneManager.LoadScene("GameOver"); // Game Over!
+            SceneManager.LoadScene("GameOver_Level1"); // Game Over!
     }
 
     /*
@@ -59,13 +57,18 @@ public class Player_v2_Controller : MonoBehaviour
     }
     */
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void DamagePlayer()
+    {
+        _water -= _waterDamage;
+        _waterBar.SetWater(_water);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if(!_isDamaged){
             // branch damage
             if (collision.gameObject.name == "LeftBranch(Clone)" || collision.gameObject.name == "RightBranch(Clone)"){
-                _water -= _waterDamage;
-                _waterBar.SetWater(_water);
+                DamagePlayer();
                 StartCoroutine("Damage");
             }
 
@@ -78,9 +81,7 @@ public class Player_v2_Controller : MonoBehaviour
                     collision.gameObject.name == "Heli(Clone)"
                 )
             {
-
-                _water -= _waterDamage;
-                _waterBar.SetWater(_water);
+                DamagePlayer();
                 StartCoroutine("Damage");
             }
             

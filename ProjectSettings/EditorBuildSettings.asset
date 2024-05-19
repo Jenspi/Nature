@@ -9,8 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: c9d42dda84f91f44e9ea33013c8319d1
   - enabled: 1
+    path: Assets/Scenes/ExpositionScene.unity
+    guid: 83e04bc0028de24469381e2d1fb9a8b2
+  - enabled: 1
+    path: Assets/Scenes/LoreScene1.unity
+    guid: 5e6c6a871f34d2949a4ec259257be935
+  - enabled: 1
     path: Assets/Scenes/DanielScene 1.unity
     guid: 61e941808149fc54f83957e560861d9b
+  - enabled: 1
+    path: Assets/Scenes/GameOver_Level1.unity
+    guid: f3a8085c90ec6544caa7a0dd9c30b7a8
   - enabled: 1
     path: Assets/Scenes/Zach_Scene_Condesation.unity
     guid: 1925b99ba650f1d4f918961e68db8c74
@@ -20,10 +29,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
     guid: a9586614052d4eb47adce91f2fb01441
-  - enabled: 1
-    path: Assets/Scenes/LoreScene1.unity
-    guid: 5e6c6a871f34d2949a4ec259257be935
-  - enabled: 1
-    path: Assets/Scenes/ExpositionScene.unity
-    guid: 83e04bc0028de24469381e2d1fb9a8b2
   m_configObjects: {}

@@ -9,25 +9,26 @@ public class TimerManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text _myText;
     [SerializeField] private int _timer;
+    [Header("Dialogue/Scene Info")]
+    [SerializeField] private string _filename;
+    [SerializeField] private string _nextScene;
     private bool _isTiming;
-    private Scene _currentScene;
     // Start is called before the first frame update
     void Start()
     {
         _isTiming = false;
-        _currentScene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!_isTiming && _currentScene.name == "Zach_Scene_Condesation"){
+        if(!_isTiming ){
             _isTiming = true;
-            StartCoroutine("TimerLevel2");
+            StartCoroutine("Timer");
         }
     }
 
-    IEnumerator TimerLevel2()
+    IEnumerator Timer()
     {
         int timer = _timer;
         while(timer > 0){
@@ -36,8 +37,8 @@ public class TimerManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         _isTiming = false;
-        GlobalVariables.Set("lorePath", "Assets/Scripts/Dialogue/DialogueLore3.txt");
-		GlobalVariables.Set("nextScene", "TitleScene");
+        GlobalVariables.Set("lorePath", "Assets/Scripts/Dialogue/" + _filename + ".txt");
+		GlobalVariables.Set("nextScene", _nextScene);
 		SceneManager.LoadScene("LoreScene1");
     }
 }

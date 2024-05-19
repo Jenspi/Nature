@@ -7,11 +7,12 @@ TagManager:
   - Wall
   - Obstacle
   - Boundrary
+  - KillBox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - 

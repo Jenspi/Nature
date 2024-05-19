@@ -33,8 +33,10 @@ public class TSButtons : MonoBehaviour
 	
 	public void QuitGame() {
 		Application.Quit();
-		// Debug.Log("Game is exiting");
-		// Just to make sure its working
+	}
+
+	public void RestartLevel1() {
+		SceneManager.LoadScene("DanielScene 1");
 	}
 
 	public void RestartLevel2() {
