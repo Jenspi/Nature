@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Rendering;
+// using UnityEditor.Rendering;
 using UnityEngine;
 
 // https://mike-87852.medium.com/create-a-scrolling-background-in-unity-ccd6ae660f0b -> creating an infitely scrolling background

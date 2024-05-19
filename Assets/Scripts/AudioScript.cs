@@ -22,18 +22,18 @@ public class SoundEffectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!audioSource.isPlaying) {
-            if (waitTimeCountdown < 0f)
-            {
-                currentClip = audioClips[Random.Range(0, audioClips.Count)];
-                audioSource.clip = currentClip;
-                audioSource.Play();
-                waitTimeCountdown = Random.Range(minWaitBetweenPlays, maxWaitBetweenPlays);
-            }
-            else
-            {
-                waitTimeCountdown -= Time.deltaTime;
-            }
-        }
+        // if (!audioSource.isPlaying) {
+        //     if (waitTimeCountdown < 0f)
+        //     {
+        //         currentClip = audioClips[Random.Range(0, audioClips.Count)];
+        //         audioSource.clip = currentClip;
+        //         audioSource.Play();
+        //         waitTimeCountdown = Random.Range(minWaitBetweenPlays, maxWaitBetweenPlays);
+        //     }
+        //     else
+        //     {
+        //         waitTimeCountdown -= Time.deltaTime;
+        //     }
+        // }
     }
 }

@@ -40,6 +40,6 @@ public class TSButtons : MonoBehaviour
 	}
 
 	public void RestartLevel2() {
-		SceneManager.LoadScene("Zach_Scene_Condesation");
+		SceneManager.LoadScene("Level2");
 	}
 }
