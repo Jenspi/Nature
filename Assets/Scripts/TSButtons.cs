@@ -19,7 +19,7 @@ public class TSButtons : MonoBehaviour
 	
 	public void Continue() {
 		GlobalVariables.Set("lorePath", "Assets/Scripts/Dialogue/DialogueLore2.txt");
-		GlobalVariables.Set("nextScene", "Zach_Scene_Condesation");
+		GlobalVariables.Set("nextScene", "Level2");
 		SceneManager.LoadScene("LoreScene1");
 	}
 	

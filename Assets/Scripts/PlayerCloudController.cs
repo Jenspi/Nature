@@ -19,15 +19,20 @@ public class PlayerCloudController : MonoBehaviour
     [SerializeField] private float _throwTime; 
     [SerializeField] private float _invulnTime;
     [SerializeField] private int _flickerAmount;
-    private bool _isJumping, _inWhirlwind, _isDamaged, _hittingWall;
+    private bool _isJumping, _inWhirlwind, _isDamaged;//, _hittingWall;
     private float _gravity;
+	// audio sources
+	public AudioSource jump;
+	public AudioSource impact;
+	public AudioSource waterpickup;
+	public AudioSource whirlwind;
 
     // Start is called before the first frame update
     void Start()
     {
         _isJumping = false;
         _inWhirlwind = false;
-        _hittingWall = false;
+        //_hittingWall = false;
         _gravity = _rb.gravityScale;
         _waterBar.setMaxWater(_waterMax);
         _waterBar.SetWater(_waterMax);
@@ -37,6 +42,7 @@ public class PlayerCloudController : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump") && _water > 0 && !_isJumping){
             _isJumping = true;
+			jump.Play();
         }
         if(_water <= 0)
             SceneManager.LoadScene("GameOver_Level2");
@@ -55,12 +61,14 @@ public class PlayerCloudController : MonoBehaviour
             _rb.AddForce(_windVector * Time.deltaTime, ForceMode2D.Impulse);
             StopCoroutine("Jump");
             _rb.gravityScale = _gravity;
-            StartCoroutine("Throw");
+            whirlwind.Play();
+			StartCoroutine("Throw");
         }
     }
 
     void DamagePlayer()
     {
+		impact.Play();
         _water -= _waterDamage;
         _waterBar.SetWater(_water);
     }
@@ -86,6 +94,7 @@ public class PlayerCloudController : MonoBehaviour
     {
         if(collider.gameObject.name == "Water(Clone)" || collider.gameObject.name == "Water"){
             Destroy(collider.gameObject);
+			waterpickup.Play();
             _water += _waterGained;
             _waterBar.SetWater(_water);
         }
