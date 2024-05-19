@@ -7,3 +7,5 @@ https://opengameart.org/content/512-sound-effects-8-bit-style
 https://opengameart.org/content/fantasy-sound-effects-library
 https://opengameart.org/content/8-bit-sound-fx
 https://opengameart.org/content/wind
+GlobalVariables:
+https://gist.github.com/hasanbayatme/f3ddf56cf261a6b40efc14ecb9881a98
