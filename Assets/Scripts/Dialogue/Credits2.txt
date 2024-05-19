@@ -1,0 +1,9 @@
+Sources
+Dialog:
+https://www.youtube.com/watch?v=8oTYabhj248
+SoundEffects: 
+https://forum.unity.com/threads/best-way-to-play-intermittent-random-sounds.856216/#post-5644465
+https://opengameart.org/content/512-sound-effects-8-bit-style
+https://opengameart.org/content/fantasy-sound-effects-library
+https://opengameart.org/content/8-bit-sound-fx
+https://opengameart.org/content/wind
