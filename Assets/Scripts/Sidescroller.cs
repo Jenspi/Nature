@@ -11,12 +11,14 @@ public class Sidescroller : MonoBehaviour
     [Header("Image Scrolling Data")]
     [SerializeField] private Transform[] _backgrounds;
     [SerializeField] private Transform _respawn, _border1, _border2;
-    private Vector3 _leftEdge;
+    [SerializeField] private bool _isLeft;
+    private Vector3 _edge;
 
     // Start is called before the first frame update
     void Start()
     {
-        _leftEdge = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
+        _edge = Camera.main.ScreenToWorldPoint(new Vector3(0, 0));
+        
     }
 
     // Update is called once per frame
@@ -30,8 +32,12 @@ public class Sidescroller : MonoBehaviour
             Transform transform = _backgrounds[i];
             float x = transform.position.x;
             float y = transform.position.y;
-            transform.position = new Vector2(x - _speed * Time.deltaTime, y);
-            if(_border1.position.x < _leftEdge.x || _border2.position.x < _leftEdge.x){
+            if(_isLeft)
+                transform.position = new Vector2(x - _speed * Time.deltaTime, y);
+            else
+                transform.position = new Vector2(x, y - _speed * Time.deltaTime);
+            if(_border1.position.x < _edge.x || _border2.position.x < _edge.x
+             || _border1.position.y < _edge.y || _border2.position.y < _edge.y){
                 transform.position = _respawn.position;
             }
         }
