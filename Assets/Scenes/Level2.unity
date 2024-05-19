@@ -1721,6 +1721,14 @@ PrefabInstance:
       propertyPath: waterpickup
       value: 
       objectReference: {fileID: 755298971}
+    - target: {fileID: 2136856782943632436, guid: 9f6dcef6e3a5ab244a8a1f7aa0310799, type: 3}
+      propertyPath: _waterDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136856782943632436, guid: 9f6dcef6e3a5ab244a8a1f7aa0310799, type: 3}
+      propertyPath: _waterGained
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3788375836226050631, guid: 9f6dcef6e3a5ab244a8a1f7aa0310799, type: 3}
       propertyPath: m_LocalPosition.x
       value: -94.89

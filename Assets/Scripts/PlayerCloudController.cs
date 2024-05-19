@@ -97,6 +97,8 @@ public class PlayerCloudController : MonoBehaviour
             Destroy(collider.gameObject);
 			waterpickup.Play();
             _water += _waterGained;
+            if(_water > _waterMax)
+                _water = _waterMax;
             _waterBar.SetWater(_water);
         }
     }
