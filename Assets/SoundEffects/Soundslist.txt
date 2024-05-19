@@ -1,0 +1,22 @@
+Sounds Effects needed: 
+
+Impact sound (can be something like water splashing into something).
+footstep_water_04
+
+Storm sounds for the whirlwind in level 2 (sfx_wpn_cannon6)
+
+Sound when water is picked up by the player (sfx_movement_ladder1a.wav)
+
+Jumping sound for the player in Level 2 (probably like a gust of wind?)
+(watersplash)
+
+Airplane (Wind)
+Helicopter (sfx_vehicle_helicopterloop3)
+
+Wind sounds for ambient
+
+Sources:
+https://opengameart.org/content/512-sound-effects-8-bit-style
+https://opengameart.org/content/fantasy-sound-effects-library
+https://opengameart.org/content/8-bit-sound-fx
+https://opengameart.org/content/wind
