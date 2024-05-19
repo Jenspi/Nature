@@ -24,6 +24,11 @@ public class Player_v2_Controller : MonoBehaviour
     [SerializeField] private int _cloudPoisonTime;
     [SerializeField] private int _flickerAmount;
     private bool _inCloud, _inPlane, _inHeli, _isDamaged;
+	// audio
+	public AudioSource impact;
+	public AudioSource helicopter;
+	public AudioSource plane;
+	
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +64,7 @@ public class Player_v2_Controller : MonoBehaviour
 
     void DamagePlayer()
     {
+		impact.Play();
         _water -= _waterDamage;
         _waterBar.SetWater(_water);
     }
